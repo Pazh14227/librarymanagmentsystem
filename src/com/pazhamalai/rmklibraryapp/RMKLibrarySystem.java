@@ -22,6 +22,10 @@ public class RMKLibrarySystem {
 		Book wingsOfFire = new Book("The wings of fire", new String[] { "Dr Abdul kalaam" }, 194704, "Biography", 200,
 				"Paperback");
 
+		// adding rmk user to database.
+		aravindh.addThisUserToDatabase(manoj);
+		raja.addThisUserToDatabase(ashok);
+
 		// adding book to library by student, faculty and librarian
 
 		// Student can request to add book or librarian can directly add books
@@ -30,10 +34,6 @@ public class RMKLibrarySystem {
 		RMKLibraryBook rmkIntroductionToAlgorithms = aravindh.addBook(introductionToAlgorithms);
 		RMKLibraryBook rmkTheRiseOfIndia = raja.addBook(theRiseOfIndia);
 		RMKLibraryBook rmkTheWingsOfFire = ashok.requestToAddBook(wingsOfFire, raja);
-
-		// adding rmk user to database.
-		aravindh.addThisUserToDatabase(manoj);
-		raja.addThisUserToDatabase(ashok);
 
 		// taking books by student and faculty
 		if (ashok.getPermissionToEnter(raja)) {

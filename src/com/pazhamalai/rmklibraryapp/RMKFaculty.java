@@ -8,8 +8,6 @@ import com.pazhamalai.librarymanagmentsystem.Librarian;
 
 public class RMKFaculty extends Faculty implements RMKLibraryAccess, RMKUserInformation {
 
-	private int userType;
-
 	// List for storing books taken
 	private ArrayList<RMKLibraryBook> booksTaken = new ArrayList<>();
 
@@ -18,7 +16,6 @@ public class RMKFaculty extends Faculty implements RMKLibraryAccess, RMKUserInfo
 
 	public RMKFaculty(String name, String department, short yearOfJoining, long employeeID) {
 		super(name, department, yearOfJoining, employeeID, "RMK University");
-		userType = RMKUserInformation.FACULTY_USER_TYPE;
 	}
 
 	public boolean getPermissionToEnter(RMKLibrarian librarian) {
@@ -49,8 +46,8 @@ public class RMKFaculty extends Faculty implements RMKLibraryAccess, RMKUserInfo
 		return librarian.addBook(book);
 	}
 
-	public int getUserType() {
-		return userType;
+	public user getUserType() {
+		return user.FACULTY;
 	}
 
 	public long getMemberID() {
@@ -71,7 +68,7 @@ public class RMKFaculty extends Faculty implements RMKLibraryAccess, RMKUserInfo
 
 	@Override
 	public String toString() {
-		return "RMKFaculty [userType=" + userType + ", booksTaken=" + booksTaken + ", getName()=" + getName()
+		return "RMKFaculty [userType=" + getUserType() + ", booksTaken=" + booksTaken + ", getName()=" + getName()
 				+ ", getDepartment()=" + getDepartment() + ", getYearOfJoining()=" + getYearOfJoining()
 				+ ", getEmployeeID()=" + getEmployeeID() + ", getUniversity()=" + getUniversity() + ", getClass()="
 				+ getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";

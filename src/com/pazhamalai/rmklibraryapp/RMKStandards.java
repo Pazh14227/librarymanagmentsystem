@@ -9,7 +9,7 @@ class RMKStandards {
 
 	// checking whether user reached his limit.
 	static boolean checkLimitOfUser(LibraryMemberAccess member, int booksTaken) {
-		if (((RMKUserInformation) member).getUserType() == RMKUserInformation.STUDENT_USER_TYPE) {
+		if (((RMKUserInformation) member).getUserType() == RMKUserInformation.user.STUDENT) {
 			return (booksTaken < STUDENT_LIMIT) ? true : false;
 		} else {
 			return (booksTaken < FACULTY_LIMIT) ? true : false;

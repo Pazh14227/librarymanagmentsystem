@@ -8,15 +8,12 @@ import com.pazhamalai.librarymanagmentsystem.Librarian;
 
 public class RMKStudent extends Student implements RMKLibraryAccess, RMKUserInformation {
 
-	private int userType;
-
 	// List for storing books taken
 	private ArrayList<RMKLibraryBook> booksTaken = new ArrayList<>();
 	private static final RMKLibraryRegister STUDENT_REGISTER = new RMKLibraryRegister();
 
 	public RMKStudent(String name, long rollNo, String department, int yearOfJoining) {
 		super(name, rollNo, department, yearOfJoining, "RMK University");
-		userType = RMKUserInformation.STUDENT_USER_TYPE;
 	}
 
 	public void addMeToLibraryDatabase(RMKLibrarian librarian) {
@@ -51,8 +48,8 @@ public class RMKStudent extends Student implements RMKLibraryAccess, RMKUserInfo
 		return librarian.addBook(book);
 	}
 
-	public int getUserType() {
-		return userType;
+	public user getUserType() {
+		return user.STUDENT;
 	}
 
 	public long getMemberID() {
@@ -73,7 +70,7 @@ public class RMKStudent extends Student implements RMKLibraryAccess, RMKUserInfo
 
 	@Override
 	public String toString() {
-		return "RMKStudent [userType=" + userType + ", booksTaken=" + booksTaken + ", hashCode()=" + hashCode()
+		return "RMKStudent [userType=" + getUserType() + ", booksTaken=" + booksTaken + ", hashCode()=" + hashCode()
 				+ ", getName()=" + getName() + ", getRollNo()=" + getRollNo() + ", getDepartment()=" + getDepartment()
 				+ ", getYearOfJoining()=" + getYearOfJoining() + ", getUniversity()=" + getUniversity()
 				+ ", getClass()=" + getClass() + ", toString()=" + super.toString() + "]";
